@@ -8,7 +8,7 @@ const connectDB = require('./config/db');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
 dotenv.config();
-
+console.log("MONGO_URI =", process.env.MONGO_URI);
 connectDB();
 
 const app = express();

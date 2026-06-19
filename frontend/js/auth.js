@@ -1,10 +1,9 @@
-const API_BASE = window.API_BASE || 'http://localhost:5000/api';
-
-function getToken(){
+const API_BASE = window.API_BASE || 'https://ecommerce-backend-h0a7.onrender.com/api';
+function getToken() {
   return localStorage.getItem('token') || '';
 }
 
-function getCurrentUser(){
+function getCurrentUser() {
   try {
     return JSON.parse(localStorage.getItem('currentUser') || 'null');
   } catch (_error) {
@@ -12,26 +11,26 @@ function getCurrentUser(){
   }
 }
 
-function setToken(token){
+function setToken(token) {
   localStorage.setItem('token', token);
 }
 
-function clearAuth(){
+function clearAuth() {
   localStorage.removeItem('token');
   localStorage.removeItem('currentUser');
   window.dispatchEvent(new CustomEvent('auth:updated'));
 }
 
-function isLoggedIn(){
+function isLoggedIn() {
   return Boolean(getToken());
 }
 
-function authHeaders(){
+function authHeaders() {
   const token = getToken();
   return token ? { Authorization: `Bearer ${token}` } : {};
 }
 
-async function apiRequest(path, options = {}){
+async function apiRequest(path, options = {}) {
   const headers = {
     'Content-Type': 'application/json',
     ...(options.headers || {}),
@@ -58,7 +57,7 @@ async function apiRequest(path, options = {}){
   return payload;
 }
 
-async function login(email, password){
+async function login(email, password) {
   const data = await apiRequest('/auth/login', {
     method: 'POST',
     body: JSON.stringify({ email, password }),
@@ -75,7 +74,7 @@ async function login(email, password){
   return data;
 }
 
-async function register(name, email, password){
+async function register(name, email, password) {
   const data = await apiRequest('/auth/register', {
     method: 'POST',
     body: JSON.stringify({ name, email, password }),
@@ -92,7 +91,7 @@ async function register(name, email, password){
   return data;
 }
 
-async function getProfile(){
+async function getProfile() {
   return apiRequest('/auth/profile', { method: 'GET' });
 }
 
@@ -126,13 +125,13 @@ async function syncLocalCartToDB() {
   }
 }
 
-function logout(){
+function logout() {
   clearAuth();
   localStorage.setItem('cart', '{}');
   window.location.href = '/login.html';
 }
 
-function requireAuth(redirectTo = 'login.html'){
+function requireAuth(redirectTo = 'login.html') {
   if (!isLoggedIn()) {
     const next = encodeURIComponent(window.location.pathname.split('/').pop());
     window.location.href = `/${redirectTo}?next=${next}`;
@@ -141,7 +140,7 @@ function requireAuth(redirectTo = 'login.html'){
   return true;
 }
 
-function redirectIfAuthenticated(target = 'index.html'){
+function redirectIfAuthenticated(target = 'index.html') {
   if (isLoggedIn()) {
     window.location.href = `/${target}`;
     return true;
@@ -149,7 +148,7 @@ function redirectIfAuthenticated(target = 'index.html'){
   return false;
 }
 
-function hydrateAuthState(){
+function hydrateAuthState() {
   // Support multiple attribute variants used across pages and the shared header
   const authLinks = Array.from(document.querySelectorAll('[data-auth-link], [data-login-link], [data-register-link], [data-profile-link]'));
   const logoutButtons = Array.from(document.querySelectorAll('[data-logout-button]'));
