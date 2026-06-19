@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Register</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/auth.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="auth-shell">
+    <section class="auth-card">
+      <h1>Create account</h1>
+      <p>Register once and use the same account across the store.</p>
+
+      <form id="register-form" class="auth-form">
+        <div class="auth-field">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="auth-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="auth-field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" required>
+        </div>
+        <div class="auth-message" id="register-message" aria-live="polite"></div>
+        <button class="btn" type="submit">Register</button>
+      </form>
+
+      <div class="auth-footer">
+        <span class="auth-muted">Already have an account?</span> <a class="auth-link" href="/login.html">Login</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/js/register.js"></script>
+</body>
+</html>

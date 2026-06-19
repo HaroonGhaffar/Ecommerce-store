@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Profile</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/auth.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="auth-shell">
+    <section class="auth-card" style="max-width: 600px; width: 100%;">
+      <h1>Your Profile</h1>
+      <p id="profile-summary" style="font-size: 1.1rem; font-weight: 500; color: #4a5568;">Loading profile...</p>
+      
+      <h2 style="margin-top: 2rem; font-size: 1.3rem; border-bottom: 1px solid #edf2f7; padding-bottom: 0.5rem; text-align: left;">Recent Orders</h2>
+      <div id="recent-orders-list" style="margin-top: 1rem; text-align: left;">
+        <p style="color: #718096;">Loading orders...</p>
+      </div>
+
+      <div class="auth-footer" style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <a class="auth-link" href="/my-orders.html" style="font-weight: 600;">View All Orders</a>
+        <a class="auth-link" href="/checkout.html">Continue to checkout &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/js/profile.js"></script>
+</body>
+</html>

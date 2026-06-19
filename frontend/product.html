@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Product</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/products.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container">
+    <section class="product-detail">
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start">
+        <div style="flex:1;min-width:260px">
+          <img id="p-image" src="https://via.placeholder.com/900x900?text=Product" alt="product image" style="width:100%;border-radius:8px;margin-bottom:1rem">
+        </div>
+        <div style="flex:1;min-width:260px">
+          <h1 id="p-title">Product title</h1>
+          <p id="p-desc">Product description</p>
+          <div style="margin-top:1rem">
+            <div id="p-price" style="font-size:1.25rem;font-weight:700;color:var(--accent)">$0.00</div>
+            <div id="p-stock" style="margin-top:.5rem;color:#4b5563">Stock</div>
+            <div style="margin-top:1rem"><button id="add-to-cart" class="btn">Add to cart</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/js/product.js"></script>
+</body>
+</html>

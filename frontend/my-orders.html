@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>My Orders</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <style>
+    .orders-shell {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    .orders-header {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #edf2f7;
+      padding-bottom: 1rem;
+    }
+    .orders-header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--text);
+    }
+    .order-card {
+      padding: 1.25rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .order-card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      border-color: var(--accent);
+    }
+    .order-card__meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .order-card__id {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--accent);
+    }
+    .order-card__status {
+      padding: 0.25rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .status--pending { background: #feebc8; color: #c05621; }
+    .status--processing { background: #e2e8f0; color: #4a5568; }
+    .status--shipped { background: #ebf8ff; color: #2b6cb0; }
+    .status--delivered { background: #c6f6d5; color: #22543d; }
+    .order-card__details {
+      display: flex;
+      justify-content: space-between;
+      color: #718096;
+      font-size: 0.9rem;
+    }
+    .empty-orders {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .empty-orders h2 {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container">
+    <section class="orders-shell">
+      <div class="orders-header">
+        <h1>My Orders</h1>
+      </div>
+      <div id="orders-list">
+        <p>Loading your orders...</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/js/my-orders.js"></script>
+</body>
+</html>

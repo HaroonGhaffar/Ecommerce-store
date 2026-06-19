@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Order Details</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <style>
+    .details-shell {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    .details-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #edf2f7;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .details-header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+      color: var(--text);
+    }
+    .details-status {
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .status--pending { background: #feebc8; color: #c05621; }
+    .status--processing { background: #e2e8f0; color: #4a5568; }
+    .status--shipped { background: #ebf8ff; color: #2b6cb0; }
+    .status--delivered { background: #c6f6d5; color: #22543d; }
+    
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .details-box {
+      border: 1px solid #edf2f7;
+      padding: 1.25rem;
+      border-radius: 8px;
+    }
+    .details-box p {
+      margin: 0.5rem 0 0;
+      line-height: 1.5;
+      color: #4a5568;
+    }
+    
+    .items-list {
+      margin-bottom: 2rem;
+    }
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid #edf2f7;
+    }
+    .item-row:last-child {
+      border-bottom: none;
+    }
+    .item-info {
+      flex: 1;
+    }
+    .item-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .item-meta {
+      font-size: 0.85rem;
+      color: #718096;
+    }
+    .item-price {
+      font-weight: 700;
+      margin-left: 1.5rem;
+    }
+    
+    .totals-box {
+      border-top: 2px solid #edf2f7;
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      width: 250px;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: #4a5568;
+    }
+    .total-row.grand-total {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 0.5rem;
+      border-top: 1px solid #edf2f7;
+      padding-top: 0.5rem;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      gap: 0.5rem;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 600px) {
+      .details-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container">
+    <a href="/my-orders.html" class="back-link">&larr; Back to My Orders</a>
+    <section class="details-shell" id="order-details-content">
+      <p>Loading order details...</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/js/order-details.js"></script>
+</body>
+</html>

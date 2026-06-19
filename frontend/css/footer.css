@@ -1,0 +1,120 @@
+.site-footer {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  padding: 0.5rem 0 0;
+  margin-top: 1rem;
+  border-top: 1px solid #333;
+}
+
+.site-footer__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.site-footer__section {
+  padding: 0;
+}
+
+.site-footer__section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.site-footer__section p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #ccc;
+  margin: 0;
+}
+
+.site-footer__links,
+.site-footer__contact,
+.site-footer__social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer__links li,
+.site-footer__contact li,
+.site-footer__social li {
+  margin-bottom: 0.4rem;
+}
+
+.site-footer__links a,
+.site-footer__social a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.site-footer__links a:hover,
+.site-footer__social a:hover {
+  color: #fff;
+}
+
+.site-footer__contact li {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.site-footer__bottom {
+  background-color: #0a0a0a;
+  padding: 0.8rem 0;
+  border-top: 1px solid #333;
+  text-align: center;
+}
+
+.site-footer__bottom p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .site-footer__inner {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    row-gap: 1.5rem;
+  }
+
+  .site-footer__section h3 {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .site-footer {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .site-footer__inner {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    row-gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .site-footer__section h3 {
+    font-size: 0.9rem;
+  }
+
+  .site-footer__section p,
+  .site-footer__links a,
+  .site-footer__contact li,
+  .site-footer__social a {
+    font-size: 0.85rem;
+  }
+
+  .site-footer__bottom {
+    padding: 0.7rem 0;
+  }
+}

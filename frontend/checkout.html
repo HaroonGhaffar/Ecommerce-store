@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/checkout.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container">
+    <h1>Checkout</h1>
+    <div class="checkout-layout">
+      <section class="panel">
+        <h2>Shipping Details</h2>
+        <form id="checkout-form">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" type="text" required>
+            </div>
+            <div class="form-group full">
+              <label for="address">Shipping Address</label>
+              <textarea id="address" name="address" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input id="city" name="city" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="postalCode">Postal Code</label>
+              <input id="postalCode" name="postalCode" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="country">Country</label>
+              <input id="country" name="country" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="phone" type="tel" required>
+            </div>
+          </div>
+          <button id="place-order" class="btn place-order" type="submit">Place Order</button>
+          <div id="checkout-status" class="notice" aria-live="polite">Payment gateway is not enabled yet. This page is ready for future order API integration.</div>
+        </form>
+      </section>
+
+      <aside class="panel">
+        <h2>Order Summary</h2>
+        <div id="order-summary" class="order-summary"></div>
+        <hr>
+        <div class="order-line"><span>Subtotal</span><strong id="checkout-subtotal">$0.00</strong></div>
+        <div class="order-line"><span>Total</span><strong id="checkout-total">$0.00</strong></div>
+        <p class="muted" style="margin-top:1rem">Order API integration can be connected after authentication flow and payment flow are finalized.</p>
+      </aside>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/js/checkout.js"></script>
+</body>
+</html>

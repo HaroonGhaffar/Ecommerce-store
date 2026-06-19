@@ -1,0 +1,5 @@
+/* Products specific styles */
+.products-hero{display:flex;flex-direction:column;gap:.5rem}
+.products-hero .subtitle{color:#4b5563}
+.products-list{margin-top:1rem}
+.product-link{color:inherit;text-decoration:none}
